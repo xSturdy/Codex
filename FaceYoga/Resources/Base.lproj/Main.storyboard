@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tabBarController">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <scenes>
+        <scene sceneID="scene-tab">
+            <objects>
+                <tabBarController id="tabBarController" customClass="RootTabBarController" customModule="FaceYoga" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="tabBar"/>
+                    <connections>
+                        <segue destination="nav-home" kind="relationship" relationship="viewControllers" id="segue-home"/>
+                        <segue destination="nav-programs" kind="relationship" relationship="viewControllers" id="segue-programs"/>
+                        <segue destination="nav-progress" kind="relationship" relationship="viewControllers" id="segue-progress"/>
+                        <segue destination="nav-profile" kind="relationship" relationship="viewControllers" id="segue-profile"/>
+                    </connections>
+                </tabBarController>
+            </objects>
+        </scene>
+        <scene sceneID="scene-home">
+            <objects>
+                <navigationController id="nav-home" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home" id="tab-home"/>
+                    <connections>
+                        <segue destination="vc-home" kind="relationship" relationship="rootViewController" id="root-home"/>
+                    </connections>
+                </navigationController>
+                <viewController id="vc-home" customClass="HomeViewController" customModule="FaceYoga" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="view-home"/>
+                </viewController>
+            </objects>
+        </scene>
+        <scene sceneID="scene-programs">
+            <objects>
+                <navigationController id="nav-programs" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Programs" id="tab-programs"/>
+                    <connections>
+                        <segue destination="vc-programs" kind="relationship" relationship="rootViewController" id="root-programs"/>
+                    </connections>
+                </navigationController>
+                <viewController id="vc-programs" customClass="ProgramsViewController" customModule="FaceYoga" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="view-programs"/>
+                </viewController>
+            </objects>
+        </scene>
+        <scene sceneID="scene-progress">
+            <objects>
+                <navigationController id="nav-progress" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Progress" id="tab-progress"/>
+                    <connections>
+                        <segue destination="vc-progress" kind="relationship" relationship="rootViewController" id="root-progress"/>
+                    </connections>
+                </navigationController>
+                <viewController id="vc-progress" customClass="ProgressViewController" customModule="FaceYoga" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="view-progress"/>
+                </viewController>
+            </objects>
+        </scene>
+        <scene sceneID="scene-profile">
+            <objects>
+                <navigationController id="nav-profile" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Profile" id="tab-profile"/>
+                    <connections>
+                        <segue destination="vc-profile" kind="relationship" relationship="rootViewController" id="root-profile"/>
+                    </connections>
+                </navigationController>
+                <viewController id="vc-profile" customClass="ProfileViewController" customModule="FaceYoga" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="view-profile"/>
+                </viewController>
+            </objects>
+        </scene>
+    </scenes>
+</document>
