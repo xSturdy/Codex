@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <scenes>
+        <scene sceneID="launch-scene">
+            <objects>
+                <viewController id="launch" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="launch-view">
+                        <subviews>
+                            <label text="Face Yoga" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="launch-label">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="launch-label" firstAttribute="centerX" secondItem="launch-view" secondAttribute="centerX" id="center-x"/>
+                            <constraint firstItem="launch-label" firstAttribute="centerY" secondItem="launch-view" secondAttribute="centerY" id="center-y"/>
+                        </constraints>
+                    </view>
+                </viewController>
+            </objects>
+        </scene>
+    </scenes>
+</document>
