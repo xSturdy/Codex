@@ -19,38 +19,35 @@ final class ProgramCardView: UIView {
     }
 
     private func setupView() {
-        backgroundColor = UIColor.white
+        backgroundColor = DesignSystem.cardColor
         layer.cornerRadius = 24
-        layer.shadowColor = UIColor.black.cgColor
-        layer.shadowOpacity = 0.08
-        layer.shadowRadius = 12
-        layer.shadowOffset = CGSize(width: 0, height: 6)
+        DesignSystem.applyCardShadow(to: self)
 
-        imageView.backgroundColor = UIColor.systemGray5
+        imageView.backgroundColor = DesignSystem.mutedColor
         imageView.layer.cornerRadius = 18
         imageView.clipsToBounds = true
         imageView.contentMode = .scaleAspectFill
 
         titleLabel.font = UIFont.preferredFont(forTextStyle: .title2)
-        titleLabel.textColor = UIColor.black
+        titleLabel.textColor = DesignSystem.primaryText
 
         detailLabel.font = UIFont.preferredFont(forTextStyle: .subheadline)
-        detailLabel.textColor = UIColor.darkGray
+        detailLabel.textColor = DesignSystem.secondaryText
 
         regionsLabel.font = UIFont.preferredFont(forTextStyle: .footnote)
-        regionsLabel.textColor = UIColor.gray
+        regionsLabel.textColor = DesignSystem.secondaryText
         regionsLabel.numberOfLines = 0
 
         startButton.setTitle("start".localized, for: .normal)
-        startButton.backgroundColor = UIColor.systemBrown
+        startButton.backgroundColor = DesignSystem.accentColor
         startButton.tintColor = UIColor.white
-        startButton.layer.cornerRadius = 20
-        startButton.contentEdgeInsets = UIEdgeInsets(top: 10, left: 24, bottom: 10, right: 24)
+        startButton.layer.cornerRadius = 22
+        startButton.contentEdgeInsets = UIEdgeInsets(top: 12, left: 28, bottom: 12, right: 28)
 
         badgeLabel.text = "completed".localized
         badgeLabel.font = UIFont.preferredFont(forTextStyle: .caption1)
         badgeLabel.textColor = UIColor.white
-        badgeLabel.backgroundColor = UIColor.systemGreen
+        badgeLabel.backgroundColor = DesignSystem.accentColor
         badgeLabel.layer.cornerRadius = 10
         badgeLabel.clipsToBounds = true
         badgeLabel.textAlignment = .center
@@ -73,7 +70,7 @@ final class ProgramCardView: UIView {
             imageView.topAnchor.constraint(equalTo: topAnchor, constant: 16),
             imageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             imageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
-            imageView.heightAnchor.constraint(equalToConstant: 160),
+            imageView.heightAnchor.constraint(equalToConstant: 180),
 
             contentStack.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 16),
             contentStack.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),

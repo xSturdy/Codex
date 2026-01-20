@@ -13,7 +13,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         self.window = window
         ThemeService.shared.applyTheme(to: window)
         StreakService.shared.refreshForAppLaunch()
-        window.rootViewController = RootTabBarController()
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        window.rootViewController = storyboard.instantiateInitialViewController()
         window.makeKeyAndVisible()
     }
 

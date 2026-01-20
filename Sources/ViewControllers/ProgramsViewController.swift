@@ -26,7 +26,7 @@ final class ProgramsViewController: UIViewController {
 
         let activeLayout = UICollectionViewFlowLayout()
         activeLayout.scrollDirection = .horizontal
-        activeLayout.itemSize = CGSize(width: 240, height: 140)
+        activeLayout.itemSize = CGSize(width: 260, height: 150)
         activeLayout.minimumLineSpacing = 16
         activeLayout.sectionInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
         activeCollectionView = UICollectionView(frame: .zero, collectionViewLayout: activeLayout)
@@ -41,7 +41,7 @@ final class ProgramsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "tab_programs".localized
-        view.backgroundColor = UIColor.systemBackground
+        view.backgroundColor = DesignSystem.backgroundColor
         setupLayout()
         setupTableView()
         setupCollections()
@@ -73,13 +73,16 @@ final class ProgramsViewController: UIViewController {
     }
 
     private func setupLayout() {
-        myProgramsLabel.font = UIFont.preferredFont(forTextStyle: .title2)
+        myProgramsLabel.font = UIFont.preferredFont(forTextStyle: .title1)
+        myProgramsLabel.textColor = DesignSystem.primaryText
         myProgramsLabel.text = "my_programs".localized
 
         activeLabel.font = UIFont.preferredFont(forTextStyle: .headline)
+        activeLabel.textColor = DesignSystem.secondaryText
         activeLabel.text = "active_programs".localized
 
         dailyLabel.font = UIFont.preferredFont(forTextStyle: .headline)
+        dailyLabel.textColor = DesignSystem.secondaryText
         dailyLabel.text = "daily_routine_programs".localized
 
         filterCollectionView.backgroundColor = UIColor.clear
@@ -110,7 +113,7 @@ final class ProgramsViewController: UIViewController {
             activeCollectionView.topAnchor.constraint(equalTo: activeLabel.bottomAnchor, constant: 12),
             activeCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             activeCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            activeCollectionView.heightAnchor.constraint(equalToConstant: 160),
+            activeCollectionView.heightAnchor.constraint(equalToConstant: 170),
 
             dailyLabel.topAnchor.constraint(equalTo: activeCollectionView.bottomAnchor, constant: 16),
             dailyLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
@@ -142,6 +145,7 @@ final class ProgramsViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.backgroundColor = UIColor.clear
+        tableView.separatorStyle = .none
     }
 
     private func applyFilter() {
@@ -176,6 +180,7 @@ extension ProgramsViewController: UICollectionViewDataSource, UICollectionViewDe
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == filterCollectionView {
+            HapticService.selection()
             selectedRegion = filterOptions[indexPath.item].region
             applyFilter()
         }
@@ -194,6 +199,7 @@ extension ProgramsViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        HapticService.impact()
         let program = filteredPrograms[indexPath.row]
         viewModel.activateProgram(program)
         let detail = ProgramDetailViewController(viewModel: ProgramDetailViewModel(program: program))

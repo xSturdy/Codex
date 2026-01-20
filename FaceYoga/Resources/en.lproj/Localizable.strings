@@ -25,11 +25,6 @@
 "badges" = "Badges";
 "english" = "English";
 "turkish" = "Türkçe";
-"tip_1" = "Relax your jaw before starting facial movements.";
-"tip_2" = "Breathe slowly and keep shoulders relaxed.";
-"tip_3" = "A gentle stretch is more effective than tension.";
-"tip_4" = "Keep your tongue resting on the roof of your mouth.";
-"tip_5" = "Focus on symmetry while you move.";
 "filter_all" = "All";
 "filter_forehead" = "Forehead";
 "filter_jaw" = "Jaw";
@@ -38,3 +33,4 @@
 "filter_chin" = "Chin/Jowls";
 "filter_under_chin" = "Under-chin";
 "reminder_message" = "You’re glowing today — want to keep going?";
+"cancel" = "Cancel";

@@ -22,15 +22,15 @@ final class StreakView: UIView {
         starStack.distribution = .fillEqually
 
         for _ in 0..<7 {
-            let imageView = UIImageView(image: UIImage(systemName: "star.fill"))
-            imageView.tintColor = UIColor.systemBrown
+            let imageView = UIImageView(image: UIImage(named: AssetAndLinks.iconStarFilled))
+            imageView.tintColor = DesignSystem.accentColor
             imageView.contentMode = .scaleAspectFit
             stars.append(imageView)
             starStack.addArrangedSubview(imageView)
         }
 
         label.font = UIFont.preferredFont(forTextStyle: .headline)
-        label.textColor = UIColor.label
+        label.textColor = DesignSystem.primaryText
 
         let stack = UIStackView(arrangedSubviews: [starStack, label])
         stack.axis = .vertical
@@ -50,7 +50,8 @@ final class StreakView: UIView {
     func update(streakCount: Int) {
         let filledCount = min(streakCount, 7)
         for (index, star) in stars.enumerated() {
-            star.tintColor = index < filledCount ? UIColor.systemBrown : UIColor.systemGray4
+            star.image = UIImage(named: index < filledCount ? AssetAndLinks.iconStarFilled : AssetAndLinks.iconStarEmpty)
+            star.tintColor = DesignSystem.accentColor
         }
         label.text = String(format: "streak_title".localized, streakCount)
     }

@@ -17,7 +17,7 @@ final class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "tab_profile".localized
-        view.backgroundColor = UIColor.systemBackground
+        view.backgroundColor = DesignSystem.backgroundColor
         setupProfileHeader()
         setupTableView()
         setupBadgesCollection()
@@ -55,6 +55,7 @@ final class ProfileViewController: UIViewController {
     private func setupTableView() {
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.backgroundColor = DesignSystem.backgroundColor
         view.addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
@@ -80,6 +81,7 @@ final class ProfileViewController: UIViewController {
         let titleLabel = UILabel()
         titleLabel.text = "badges".localized
         titleLabel.font = UIFont.preferredFont(forTextStyle: .headline)
+        titleLabel.textColor = DesignSystem.primaryText
 
         footerView.addSubview(titleLabel)
         footerView.addSubview(badgeCollectionView)
@@ -102,6 +104,7 @@ final class ProfileViewController: UIViewController {
     }
 
     @objc private func selectPhoto() {
+        HapticService.selection()
         var config = PHPickerConfiguration(photoLibrary: .shared())
         config.filter = .images
         let picker = PHPickerViewController(configuration: config)
@@ -140,28 +143,31 @@ final class ProfileViewController: UIViewController {
             datePicker.heightAnchor.constraint(equalToConstant: 200)
         ])
         alert.addAction(UIAlertAction(title: "save".localized, style: .default) { _ in
+            HapticService.impact()
             UserDefaults.standard.set(datePicker.date, forKey: "reminderTime")
             NotificationService.shared.scheduleDailyReminder(at: datePicker.date)
         })
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        alert.addAction(UIAlertAction(title: "cancel".localized, style: .cancel))
         present(alert, animated: true)
     }
 
     private func showLanguagePicker() {
         let alert = UIAlertController(title: "language".localized, message: nil, preferredStyle: .actionSheet)
         alert.addAction(UIAlertAction(title: "english".localized, style: .default) { _ in
+            HapticService.selection()
             LocalizationService.shared.currentLanguage = "en"
         })
         alert.addAction(UIAlertAction(title: "turkish".localized, style: .default) { _ in
+            HapticService.selection()
             LocalizationService.shared.currentLanguage = "tr"
         })
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        alert.addAction(UIAlertAction(title: "cancel".localized, style: .cancel))
         present(alert, animated: true)
     }
 
     private func shareCard() -> UIImage {
         let cardView = UIView(frame: CGRect(x: 0, y: 0, width: 320, height: 420))
-        cardView.backgroundColor = UIColor.systemBrown
+        cardView.backgroundColor = DesignSystem.accentColor
         let backgroundImageView = UIImageView(image: UIImage(named: AssetAndLinks.shareCardBackgroundImage))
         backgroundImageView.contentMode = .scaleAspectFill
         backgroundImageView.frame = cardView.bounds
@@ -212,10 +218,14 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .value1, reuseIdentifier: nil)
+        cell.backgroundColor = DesignSystem.cardColor
+        cell.textLabel?.textColor = DesignSystem.primaryText
+        cell.detailTextLabel?.textColor = DesignSystem.secondaryText
         guard let setting = Setting(rawValue: indexPath.row) else { return cell }
         switch setting {
         case .reminder:
             cell.textLabel?.text = "reminder".localized
+            cell.imageView?.image = UIImage(named: AssetAndLinks.iconReminder)
             let toggle = UISwitch()
             toggle.isOn = UserDefaults.standard.bool(forKey: "reminderEnabled")
             toggle.addTarget(self, action: #selector(reminderToggled(_:)), for: .valueChanged)
@@ -223,15 +233,18 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
             cell.detailTextLabel?.text = ""
         case .darkMode:
             cell.textLabel?.text = "dark_mode".localized
+            cell.imageView?.image = UIImage(named: AssetAndLinks.iconDarkMode)
             let toggle = UISwitch()
             toggle.isOn = ThemeService.shared.isDarkModeEnabled
             toggle.addTarget(self, action: #selector(darkModeToggled(_:)), for: .valueChanged)
             cell.accessoryView = toggle
         case .share:
             cell.textLabel?.text = "share".localized
+            cell.imageView?.image = UIImage(named: AssetAndLinks.iconShare)
             cell.accessoryType = .disclosureIndicator
         case .language:
             cell.textLabel?.text = "language".localized
+            cell.imageView?.image = UIImage(named: AssetAndLinks.iconLanguage)
             cell.detailTextLabel?.text = LocalizationService.shared.currentLanguage == "tr" ? "turkish".localized : "english".localized
             cell.accessoryType = .disclosureIndicator
         }
@@ -241,6 +254,7 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let setting = Setting(rawValue: indexPath.row) else { return }
         tableView.deselectRow(at: indexPath, animated: true)
+        HapticService.selection()
         switch setting {
         case .reminder:
             showTimePicker()
@@ -256,10 +270,12 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     @objc private func reminderToggled(_ sender: UISwitch) {
+        HapticService.selection()
         updateReminder(enabled: sender.isOn)
     }
 
     @objc private func darkModeToggled(_ sender: UISwitch) {
+        HapticService.selection()
         updateDarkMode(enabled: sender.isOn)
     }
 }

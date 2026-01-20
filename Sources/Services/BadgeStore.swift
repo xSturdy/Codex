@@ -14,7 +14,8 @@ final class BadgeStore {
 
     func addBadge(for program: Program) {
         guard !badges.contains(where: { $0.title == program.name }) else { return }
-        let badge = Badge(id: UUID(), title: program.name, imageName: "badge_placeholder")
+        let imageName = AssetAndLinks.badgeImagePlaceholders.randomElement() ?? AssetAndLinks.iconBadgePlaceholder
+        let badge = Badge(id: UUID(), title: program.name, imageName: imageName)
         badges.append(badge)
     }
 }

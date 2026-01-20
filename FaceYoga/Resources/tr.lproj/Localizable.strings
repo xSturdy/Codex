@@ -25,11 +25,6 @@
 "badges" = "Rozetler";
 "english" = "English";
 "turkish" = "Türkçe";
-"tip_1" = "Yüz hareketlerine başlamadan önce çeneni gevşet.";
-"tip_2" = "Yavaş nefes al ve omuzlarını rahat bırak.";
-"tip_3" = "Nazik bir esneme, gerginlikten daha etkilidir.";
-"tip_4" = "Dilini damağında dinlendir.";
-"tip_5" = "Hareketlerde simetriye odaklan.";
 "filter_all" = "Tümü";
 "filter_forehead" = "Alın";
 "filter_jaw" = "Çene";
@@ -38,3 +33,4 @@
 "filter_chin" = "Çene/Jowl";
 "filter_under_chin" = "Gıdı";
 "reminder_message" = "Bugün ışıldıyorsun — devam etmek ister misin?";
+"cancel" = "İptal";

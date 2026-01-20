@@ -16,18 +16,18 @@ final class TipOfDayView: UIView {
     }
 
     private func setupView() {
-        backgroundColor = UIColor.systemGray6
+        backgroundColor = DesignSystem.mutedColor
         layer.cornerRadius = 18
 
-        iconView.image = UIImage(systemName: "lightbulb.fill")
-        iconView.tintColor = UIColor.systemBrown
+        iconView.image = UIImage(named: AssetAndLinks.iconLightbulb)
+        iconView.tintColor = DesignSystem.accentColor
         iconView.contentMode = .scaleAspectFit
 
         titleLabel.font = UIFont.preferredFont(forTextStyle: .headline)
-        titleLabel.textColor = UIColor.label
+        titleLabel.textColor = DesignSystem.primaryText
 
         tipLabel.font = UIFont.preferredFont(forTextStyle: .subheadline)
-        tipLabel.textColor = UIColor.darkGray
+        tipLabel.textColor = DesignSystem.secondaryText
         tipLabel.numberOfLines = 0
 
         let textStack = UIStackView(arrangedSubviews: [titleLabel, tipLabel])

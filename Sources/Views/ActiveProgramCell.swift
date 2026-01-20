@@ -9,19 +9,16 @@ final class ActiveProgramCell: UICollectionViewCell {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        contentView.backgroundColor = UIColor.white
+        contentView.backgroundColor = DesignSystem.cardColor
         contentView.layer.cornerRadius = 20
-        contentView.layer.shadowColor = UIColor.black.cgColor
-        contentView.layer.shadowOpacity = 0.08
-        contentView.layer.shadowRadius = 8
-        contentView.layer.shadowOffset = CGSize(width: 0, height: 4)
+        DesignSystem.applyCardShadow(to: contentView)
 
         titleLabel.font = UIFont.preferredFont(forTextStyle: .headline)
-        titleLabel.textColor = UIColor.black
+        titleLabel.textColor = DesignSystem.primaryText
         progressLabel.font = UIFont.preferredFont(forTextStyle: .subheadline)
-        progressLabel.textColor = UIColor.darkGray
-        progressView.trackTintColor = UIColor.systemGray5
-        progressView.progressTintColor = UIColor.systemBrown
+        progressLabel.textColor = DesignSystem.secondaryText
+        progressView.trackTintColor = DesignSystem.mutedColor
+        progressView.progressTintColor = DesignSystem.accentColor
 
         let stack = UIStackView(arrangedSubviews: [titleLabel, progressLabel, progressView])
         stack.axis = .vertical

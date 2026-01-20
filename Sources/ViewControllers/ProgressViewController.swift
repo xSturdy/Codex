@@ -14,7 +14,7 @@ final class ProgressViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "tab_progress".localized
-        view.backgroundColor = UIColor.systemBackground
+        view.backgroundColor = DesignSystem.backgroundColor
         setupLayout()
         configure()
         NotificationCenter.default.addObserver(self, selector: #selector(handleLanguageChange), name: .languageDidChange, object: nil)
@@ -24,18 +24,23 @@ final class ProgressViewController: UIViewController {
         streakView.update(streakCount: viewModel.streakCount)
 
         totalMinutesLabel.font = UIFont.preferredFont(forTextStyle: .headline)
+        totalMinutesLabel.textColor = DesignSystem.primaryText
         programsCompletedLabel.font = UIFont.preferredFont(forTextStyle: .headline)
+        programsCompletedLabel.textColor = DesignSystem.primaryText
 
         calendarView.locale = Locale.current
+        calendarView.backgroundColor = DesignSystem.cardColor
+        calendarView.layer.cornerRadius = 16
         calendarView.selectionBehavior = UICalendarSelectionSingleDate(delegate: self)
 
         noteTextView.font = UIFont.preferredFont(forTextStyle: .body)
         noteTextView.layer.cornerRadius = 12
-        noteTextView.layer.borderColor = UIColor.systemGray4.cgColor
+        noteTextView.layer.borderColor = DesignSystem.mutedColor.cgColor
         noteTextView.layer.borderWidth = 1
+        noteTextView.backgroundColor = DesignSystem.cardColor
 
         saveButton.setTitle("save".localized, for: .normal)
-        saveButton.backgroundColor = UIColor.systemBrown
+        saveButton.backgroundColor = DesignSystem.accentColor
         saveButton.tintColor = UIColor.white
         saveButton.layer.cornerRadius = 18
         saveButton.addTarget(self, action: #selector(saveTapped), for: .touchUpInside)
@@ -47,6 +52,7 @@ final class ProgressViewController: UIViewController {
 
         noteLabel.text = "how_did_you_feel".localized
         noteLabel.font = UIFont.preferredFont(forTextStyle: .headline)
+        noteLabel.textColor = DesignSystem.primaryText
 
         view.addSubview(streakView)
         view.addSubview(statsStack)
@@ -109,12 +115,14 @@ final class ProgressViewController: UIViewController {
         let isToday = Calendar.current.isDateInToday(date)
         noteTextView.text = viewModel.noteText(for: date)
         noteTextView.isEditable = isToday
-        noteTextView.textColor = isToday ? UIColor.label : UIColor.secondaryLabel
+        noteTextView.textColor = isToday ? DesignSystem.primaryText : DesignSystem.secondaryText
         saveButton.isEnabled = isToday
         saveButton.alpha = isToday ? 1.0 : 0.5
     }
 
     @objc private func saveTapped() {
+        HapticService.impact()
+        saveButton.animatePress()
         viewModel.save(noteText: noteTextView.text ?? "", for: selectedDate)
     }
 }
@@ -122,6 +130,7 @@ final class ProgressViewController: UIViewController {
 extension ProgressViewController: UICalendarSelectionSingleDateDelegate {
     func dateSelection(_ selection: UICalendarSelectionSingleDate, didSelectDate dateComponents: DateComponents?) {
         guard let date = dateComponents?.date else { return }
+        HapticService.selection()
         selectDate(date)
     }
 }

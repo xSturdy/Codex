@@ -3,8 +3,6 @@ import Foundation
 final class DailySelectionService {
     static let shared = DailySelectionService()
 
-    private let tipKeys = ["tip_1", "tip_2", "tip_3", "tip_4", "tip_5"]
-
     private init() {}
 
     func routineProgram(from programs: [Program], date: Date = Date()) -> Program? {
@@ -14,8 +12,9 @@ final class DailySelectionService {
     }
 
     func tipForToday(date: Date = Date()) -> DailyTip {
-        let index = deterministicIndex(count: tipKeys.count, date: date)
-        return DailyTip(id: UUID(), text: tipKeys[index].localized)
+        let tips = LocalizationService.shared.currentLanguage == "en" ? AssetAndLinks.tipPlaceholdersEN : AssetAndLinks.tipPlaceholdersTR
+        let index = deterministicIndex(count: tips.count, date: date)
+        return DailyTip(id: UUID(), text: tips[index])
     }
 
     private func deterministicIndex(count: Int, date: Date) -> Int {

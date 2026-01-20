@@ -12,7 +12,7 @@ final class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "tab_home".localized
-        view.backgroundColor = UIColor.systemBackground
+        view.backgroundColor = DesignSystem.backgroundColor
         setupLayout()
         configure()
         NotificationCenter.default.addObserver(self, selector: #selector(handleLanguageChange), name: .languageDidChange, object: nil)
@@ -34,7 +34,7 @@ final class HomeViewController: UIViewController {
 
     private func setupLayout() {
         routineLabel.font = UIFont.preferredFont(forTextStyle: .headline)
-        routineLabel.textColor = UIColor.black
+        routineLabel.textColor = DesignSystem.primaryText
         routineLabel.text = "todays_routine".localized
 
         scrollView.alwaysBounceVertical = true
@@ -95,6 +95,8 @@ final class HomeViewController: UIViewController {
     }
 
     @objc private func startTapped() {
+        HapticService.impact()
+        programCard.startButton.animatePress()
         guard let program = viewModel.todayProgram else { return }
         ActiveProgramStore.shared.activateProgram(program.id)
         let detail = ProgramDetailViewController(viewModel: ProgramDetailViewModel(program: program))

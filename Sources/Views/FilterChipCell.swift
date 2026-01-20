@@ -7,10 +7,10 @@ final class FilterChipCell: UICollectionViewCell {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        contentView.backgroundColor = UIColor.systemGray6
+        contentView.backgroundColor = DesignSystem.mutedColor
         contentView.layer.cornerRadius = 16
         label.font = UIFont.preferredFont(forTextStyle: .subheadline)
-        label.textColor = UIColor.black
+        label.textColor = DesignSystem.primaryText
         label.textAlignment = .center
         contentView.addSubview(label)
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -28,8 +28,8 @@ final class FilterChipCell: UICollectionViewCell {
 
     override var isSelected: Bool {
         didSet {
-            contentView.backgroundColor = isSelected ? UIColor.systemBrown : UIColor.systemGray6
-            label.textColor = isSelected ? UIColor.white : UIColor.black
+            contentView.backgroundColor = isSelected ? DesignSystem.accentColor : DesignSystem.mutedColor
+            label.textColor = isSelected ? UIColor.white : DesignSystem.primaryText
         }
     }
 

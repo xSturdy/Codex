@@ -8,15 +8,16 @@ final class BadgeCell: UICollectionViewCell {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        contentView.backgroundColor = UIColor.systemGray6
+        contentView.backgroundColor = DesignSystem.mutedColor
         contentView.layer.cornerRadius = 16
 
         imageView.contentMode = .scaleAspectFit
-        imageView.tintColor = UIColor.systemBrown
+        imageView.tintColor = DesignSystem.accentColor
 
         titleLabel.font = UIFont.preferredFont(forTextStyle: .caption1)
         titleLabel.textAlignment = .center
         titleLabel.numberOfLines = 2
+        titleLabel.textColor = DesignSystem.primaryText
 
         let stack = UIStackView(arrangedSubviews: [imageView, titleLabel])
         stack.axis = .vertical
@@ -43,6 +44,6 @@ final class BadgeCell: UICollectionViewCell {
 
     func configure(badge: Badge) {
         titleLabel.text = badge.title
-        imageView.image = UIImage(named: badge.imageName) ?? UIImage(systemName: "seal.fill")
+        imageView.image = UIImage(named: badge.imageName) ?? UIImage(named: AssetAndLinks.iconBadgePlaceholder)
     }
 }

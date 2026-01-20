@@ -22,7 +22,7 @@ final class ProgramDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = viewModel.program.name
-        view.backgroundColor = UIColor.systemBackground
+        view.backgroundColor = DesignSystem.backgroundColor
         setupPlayer()
         setupLayout()
         setupTableView()
@@ -52,7 +52,7 @@ final class ProgramDetailViewController: UIViewController {
         playerController.didMove(toParent: self)
 
         completeButton.setTitle("complete_program".localized, for: .normal)
-        completeButton.backgroundColor = UIColor.systemBrown
+        completeButton.backgroundColor = DesignSystem.accentColor
         completeButton.tintColor = UIColor.white
         completeButton.layer.cornerRadius = 20
         completeButton.isEnabled = false
@@ -88,6 +88,7 @@ final class ProgramDetailViewController: UIViewController {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "SegmentCell")
         tableView.dataSource = self
         tableView.backgroundColor = UIColor.clear
+        tableView.separatorStyle = .none
     }
 
     @objc private func handleLanguageChange() {
@@ -103,6 +104,8 @@ final class ProgramDetailViewController: UIViewController {
     }
 
     @objc private func completeTapped() {
+        HapticService.impact(style: .medium)
+        completeButton.animatePress()
         viewModel.markCompletionIfNeeded()
         navigationController?.popViewController(animated: true)
     }
@@ -121,6 +124,8 @@ extension ProgramDetailViewController: UITableViewDataSource {
         content.secondaryText = "\(segment.durationMinutes) min"
         cell.contentConfiguration = content
         cell.selectionStyle = .none
+        cell.backgroundColor = DesignSystem.cardColor
+        cell.layer.cornerRadius = 12
         return cell
     }
 }
