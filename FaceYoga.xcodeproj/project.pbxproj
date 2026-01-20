@@ -1,0 +1,369 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		001A0001 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001B0001 /* AppDelegate.swift */; };
+		001A0002 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001B0002 /* SceneDelegate.swift */; };
+		001A0003 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001B0003 /* Models.swift */; };
+		001A0004 /* AssetAndLinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001B0004 /* AssetAndLinks.swift */; };
+		001A0005 /* DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001B0005 /* DesignSystem.swift */; };
+		001A0006 /* StreakService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001B0006 /* StreakService.swift */; };
+		001A0007 /* LocalizationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001B0007 /* LocalizationService.swift */; };
+		001A0008 /* ProgramCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001B0008 /* ProgramCatalog.swift */; };
+		001A0009 /* DailySelectionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001B0009 /* DailySelectionService.swift */; };
+		001A000A /* PersistenceStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001B000A /* PersistenceStore.swift */; };
+		001A000B /* ActiveProgramStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001B000B /* ActiveProgramStore.swift */; };
+		001A000C /* NoteStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001B000C /* NoteStore.swift */; };
+		001A000D /* HapticService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001B000D /* HapticService.swift */; };
+		001A000E /* BadgeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001B000E /* BadgeStore.swift */; };
+		001A000F /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001B000F /* NotificationService.swift */; };
+		001A0010 /* ThemeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001B0010 /* ThemeService.swift */; };
+		001A0011 /* CompletionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001B0011 /* CompletionStore.swift */; };
+		001A0012 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001B0012 /* HomeViewModel.swift */; };
+		001A0013 /* ProgramsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001B0013 /* ProgramsViewModel.swift */; };
+		001A0014 /* ProgramDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001B0014 /* ProgramDetailViewModel.swift */; };
+		001A0015 /* ProgressViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001B0015 /* ProgressViewModel.swift */; };
+		001A0016 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001B0016 /* ProfileViewModel.swift */; };
+		001A0017 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001B0017 /* HomeViewController.swift */; };
+		001A0018 /* ProgramsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001B0018 /* ProgramsViewController.swift */; };
+		001A0019 /* ProgramDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001B0019 /* ProgramDetailViewController.swift */; };
+		001A001A /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001B001A /* ProgressViewController.swift */; };
+		001A001B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001B001B /* ProfileViewController.swift */; };
+		001A001C /* RootTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001B001C /* RootTabBarController.swift */; };
+		001A001D /* ProgramCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001B001D /* ProgramCell.swift */; };
+		001A001E /* StreakView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001B001E /* StreakView.swift */; };
+		001A001F /* ProgramCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001B001F /* ProgramCardView.swift */; };
+		001A0020 /* TipOfDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001B0020 /* TipOfDayView.swift */; };
+		001A0021 /* UIButton+PressAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001B0021 /* UIButton+PressAnimation.swift */; };
+		001A0022 /* ActiveProgramCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001B0022 /* ActiveProgramCell.swift */; };
+		001A0023 /* BadgeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001B0023 /* BadgeCell.swift */; };
+		001A0024 /* FilterChipCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001B0024 /* FilterChipCell.swift */; };
+		001A0025 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 001B0025 /* Main.storyboard */; };
+		001A0026 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 001B0026 /* LaunchScreen.storyboard */; };
+		001A0027 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 001B0027 /* Assets.xcassets */; };
+		001A0028 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 001B0030 /* Localizable.strings */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		001B0001 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sources/AppDelegate.swift; sourceTree = "<group>"; };
+		001B0002 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sources/SceneDelegate.swift; sourceTree = "<group>"; };
+		001B0003 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sources/Models/Models.swift; sourceTree = "<group>"; };
+		001B0004 /* AssetAndLinks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sources/Resources/AssetAndLinks.swift; sourceTree = "<group>"; };
+		001B0005 /* DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sources/Resources/DesignSystem.swift; sourceTree = "<group>"; };
+		001B0006 /* StreakService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sources/Services/StreakService.swift; sourceTree = "<group>"; };
+		001B0007 /* LocalizationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sources/Services/LocalizationService.swift; sourceTree = "<group>"; };
+		001B0008 /* ProgramCatalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sources/Services/ProgramCatalog.swift; sourceTree = "<group>"; };
+		001B0009 /* DailySelectionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sources/Services/DailySelectionService.swift; sourceTree = "<group>"; };
+		001B000A /* PersistenceStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sources/Services/PersistenceStore.swift; sourceTree = "<group>"; };
+		001B000B /* ActiveProgramStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sources/Services/ActiveProgramStore.swift; sourceTree = "<group>"; };
+		001B000C /* NoteStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sources/Services/NoteStore.swift; sourceTree = "<group>"; };
+		001B000D /* HapticService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sources/Services/HapticService.swift; sourceTree = "<group>"; };
+		001B000E /* BadgeStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sources/Services/BadgeStore.swift; sourceTree = "<group>"; };
+		001B000F /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sources/Services/NotificationService.swift; sourceTree = "<group>"; };
+		001B0010 /* ThemeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sources/Services/ThemeService.swift; sourceTree = "<group>"; };
+		001B0011 /* CompletionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sources/Services/CompletionStore.swift; sourceTree = "<group>"; };
+		001B0012 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sources/ViewModels/HomeViewModel.swift; sourceTree = "<group>"; };
+		001B0013 /* ProgramsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sources/ViewModels/ProgramsViewModel.swift; sourceTree = "<group>"; };
+		001B0014 /* ProgramDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sources/ViewModels/ProgramDetailViewModel.swift; sourceTree = "<group>"; };
+		001B0015 /* ProgressViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sources/ViewModels/ProgressViewModel.swift; sourceTree = "<group>"; };
+		001B0016 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sources/ViewModels/ProfileViewModel.swift; sourceTree = "<group>"; };
+		001B0017 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sources/ViewControllers/HomeViewController.swift; sourceTree = "<group>"; };
+		001B0018 /* ProgramsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sources/ViewControllers/ProgramsViewController.swift; sourceTree = "<group>"; };
+		001B0019 /* ProgramDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sources/ViewControllers/ProgramDetailViewController.swift; sourceTree = "<group>"; };
+		001B001A /* ProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sources/ViewControllers/ProgressViewController.swift; sourceTree = "<group>"; };
+		001B001B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sources/ViewControllers/ProfileViewController.swift; sourceTree = "<group>"; };
+		001B001C /* RootTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sources/ViewControllers/RootTabBarController.swift; sourceTree = "<group>"; };
+		001B001D /* ProgramCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sources/Views/ProgramCell.swift; sourceTree = "<group>"; };
+		001B001E /* StreakView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sources/Views/StreakView.swift; sourceTree = "<group>"; };
+		001B001F /* ProgramCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sources/Views/ProgramCardView.swift; sourceTree = "<group>"; };
+		001B0020 /* TipOfDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sources/Views/TipOfDayView.swift; sourceTree = "<group>"; };
+		001B0021 /* UIButton+PressAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sources/Views/UIButton+PressAnimation.swift; sourceTree = "<group>"; };
+		001B0022 /* ActiveProgramCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sources/Views/ActiveProgramCell.swift; sourceTree = "<group>"; };
+		001B0023 /* BadgeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sources/Views/BadgeCell.swift; sourceTree = "<group>"; };
+		001B0024 /* FilterChipCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sources/Views/FilterChipCell.swift; sourceTree = "<group>"; };
+		001B0025 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FaceYoga/Resources/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		001B0026 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FaceYoga/Resources/Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		001B0027 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = FaceYoga/Resources/Assets.xcassets; sourceTree = "<group>"; };
+		001B0028 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = FaceYoga/Resources/en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		001B0029 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = FaceYoga/Resources/tr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		001B002A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = FaceYoga/Info.plist; sourceTree = "<group>"; };
+		001B002B /* FaceYoga.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; path = FaceYoga.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		002C0001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		003D0001 = {
+			isa = PBXGroup;
+			children = (
+				003D0002 /* FaceYoga */,
+				003D0003 /* Sources */,
+				001B002B /* FaceYoga.app */,
+			);
+			sourceTree = "<group>";
+		};
+		003D0002 /* FaceYoga */ = {
+			isa = PBXGroup;
+				children = (
+					001B002A /* Info.plist */,
+					001B0025 /* Main.storyboard */,
+					001B0026 /* LaunchScreen.storyboard */,
+					001B0027 /* Assets.xcassets */,
+					001B0030 /* Localizable.strings */,
+				);
+			path = FaceYoga;
+			sourceTree = "<group>";
+		};
+		003D0003 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				001B0001 /* AppDelegate.swift */,
+				001B0002 /* SceneDelegate.swift */,
+				001B0003 /* Models.swift */,
+				001B0004 /* AssetAndLinks.swift */,
+				001B0005 /* DesignSystem.swift */,
+				001B0006 /* StreakService.swift */,
+				001B0007 /* LocalizationService.swift */,
+				001B0008 /* ProgramCatalog.swift */,
+				001B0009 /* DailySelectionService.swift */,
+				001B000A /* PersistenceStore.swift */,
+				001B000B /* ActiveProgramStore.swift */,
+				001B000C /* NoteStore.swift */,
+				001B000D /* HapticService.swift */,
+				001B000E /* BadgeStore.swift */,
+				001B000F /* NotificationService.swift */,
+				001B0010 /* ThemeService.swift */,
+				001B0011 /* CompletionStore.swift */,
+				001B0012 /* HomeViewModel.swift */,
+				001B0013 /* ProgramsViewModel.swift */,
+				001B0014 /* ProgramDetailViewModel.swift */,
+				001B0015 /* ProgressViewModel.swift */,
+				001B0016 /* ProfileViewModel.swift */,
+				001B0017 /* HomeViewController.swift */,
+				001B0018 /* ProgramsViewController.swift */,
+				001B0019 /* ProgramDetailViewController.swift */,
+				001B001A /* ProgressViewController.swift */,
+				001B001B /* ProfileViewController.swift */,
+				001B001C /* RootTabBarController.swift */,
+				001B001D /* ProgramCell.swift */,
+				001B001E /* StreakView.swift */,
+				001B001F /* ProgramCardView.swift */,
+				001B0020 /* TipOfDayView.swift */,
+				001B0021 /* UIButton+PressAnimation.swift */,
+				001B0022 /* ActiveProgramCell.swift */,
+				001B0023 /* BadgeCell.swift */,
+				001B0024 /* FilterChipCell.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXVariantGroup section */
+		001B0030 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				001B0028 /* en */,
+				001B0029 /* tr */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin PBXNativeTarget section */
+		004E0001 /* FaceYoga */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 005F0001 /* Build configuration list for PBXNativeTarget "FaceYoga" */;
+			buildPhases = (
+				00600001 /* Sources */,
+				00600002 /* Frameworks */,
+				00600003 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FaceYoga;
+			productName = FaceYoga;
+			productReference = 001B002B /* FaceYoga.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		00710001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1500;
+				ORGANIZATIONNAME = FaceYoga;
+				TargetAttributes = {
+					004E0001 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = 00710002 /* Build configuration list for PBXProject "FaceYoga" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = tr;
+			knownRegions = (
+				tr,
+				en,
+				Base,
+			);
+			mainGroup = 003D0001;
+			productRefGroup = 003D0001;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				004E0001 /* FaceYoga */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		00600003 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+				files = (
+					001A0025 /* Main.storyboard in Resources */,
+					001A0026 /* LaunchScreen.storyboard in Resources */,
+					001A0027 /* Assets.xcassets in Resources */,
+					001A0028 /* Localizable.strings in Resources */,
+				);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		00600001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				001A0001 /* AppDelegate.swift in Sources */,
+				001A0002 /* SceneDelegate.swift in Sources */,
+				001A0003 /* Models.swift in Sources */,
+				001A0004 /* AssetAndLinks.swift in Sources */,
+				001A0005 /* DesignSystem.swift in Sources */,
+				001A0006 /* StreakService.swift in Sources */,
+				001A0007 /* LocalizationService.swift in Sources */,
+				001A0008 /* ProgramCatalog.swift in Sources */,
+				001A0009 /* DailySelectionService.swift in Sources */,
+				001A000A /* PersistenceStore.swift in Sources */,
+				001A000B /* ActiveProgramStore.swift in Sources */,
+				001A000C /* NoteStore.swift in Sources */,
+				001A000D /* HapticService.swift in Sources */,
+				001A000E /* BadgeStore.swift in Sources */,
+				001A000F /* NotificationService.swift in Sources */,
+				001A0010 /* ThemeService.swift in Sources */,
+				001A0011 /* CompletionStore.swift in Sources */,
+				001A0012 /* HomeViewModel.swift in Sources */,
+				001A0013 /* ProgramsViewModel.swift in Sources */,
+				001A0014 /* ProgramDetailViewModel.swift in Sources */,
+				001A0015 /* ProgressViewModel.swift in Sources */,
+				001A0016 /* ProfileViewModel.swift in Sources */,
+				001A0017 /* HomeViewController.swift in Sources */,
+				001A0018 /* ProgramsViewController.swift in Sources */,
+				001A0019 /* ProgramDetailViewController.swift in Sources */,
+				001A001A /* ProgressViewController.swift in Sources */,
+				001A001B /* ProfileViewController.swift in Sources */,
+				001A001C /* RootTabBarController.swift in Sources */,
+				001A001D /* ProgramCell.swift in Sources */,
+				001A001E /* StreakView.swift in Sources */,
+				001A001F /* ProgramCardView.swift in Sources */,
+				001A0020 /* TipOfDayView.swift in Sources */,
+				001A0021 /* UIButton+PressAnimation.swift in Sources */,
+				001A0022 /* ActiveProgramCell.swift in Sources */,
+				001A0023 /* BadgeCell.swift in Sources */,
+				001A0024 /* FilterChipCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		00820001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = FaceYoga/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.faceyoga;
+				PRODUCT_NAME = FaceYoga;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		00820002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = FaceYoga/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.faceyoga;
+				PRODUCT_NAME = FaceYoga;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		00820003 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		00820004 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		005F0001 /* Build configuration list for PBXNativeTarget "FaceYoga" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00820001 /* Debug */,
+				00820002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		00710002 /* Build configuration list for PBXProject "FaceYoga" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00820003 /* Debug */,
+				00820004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 00710001 /* Project object */;
+}
